@@ -1,1 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Fitness Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
+      body {
+        background-color: #000;
+        font-family: 'Inter', sans-serif;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      /* iOS App Icon Shape */
+      .app-icon {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 22%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.1s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      }
+
+      .app-icon:active {
+        transform: scale(0.9);
+      }
+
+      /* Gradients */
+      .bg-red { background: linear-gradient(135deg, #ff3b30, #ff2d55); }
+      .bg-orange { background: linear-gradient(135deg, #ff9500, #ffcc00); }
+      .bg-green { background: linear-gradient(135deg, #34c759, #30d158); }
+      .bg-blue { background: linear-gradient(135deg, #007aff, #05a1ff); }
+      .bg-indigo { background: linear-gradient(135deg, #5856d6, #5e5ce6); }
+      .bg-teal { background: linear-gradient(135deg, #30beca, #5ac8fa); }
+      .bg-pink { background: linear-gradient(135deg, #ff2d55, #ff375f); }
+      .bg-gray { background: linear-gradient(135deg, #8e8e93, #636366); }
+
+      /* Hide scrollbar but allow scrolling */
+      .custom-scroll::-webkit-scrollbar { display: none; }
+      .custom-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+  </head>
+  <body class="flex flex-col items-center h-screen">
+    
+    <div class="w-full max-w-[420px] h-full flex flex-col bg-black">
+        
+        <header class="pt-14 px-6 pb-4 shrink-0">
+          <h1 class="text-3xl font-extrabold tracking-tight">Fitness Tools</h1>
+          <p class="text-stone-500 text-sm font-medium">Select a module</p>
+        </header>
+
+        <main class="flex-grow overflow-y-auto px-6 custom-scroll">
+          <div class="sticky top-0 bg-black/90 backdrop-blur-md py-4 z-50">
+            <input 
+              type="text" id="appSearch" placeholder="Search..." 
+              class="w-full bg-stone-900 border-none rounded-xl py-3 px-4 text-sm focus:ring-2 focus:ring-blue-500 outline-none text-white placeholder-stone-500"
+            >
+          </div>
+
+          <div class="grid grid-cols-3 gap-x-6 gap-y-8 pb-20 mt-2">
+            
+<!-- 1 -->
+<div class="app-item flex flex-col items-center gap-2">
+  <a href="test-01.html" class="app-icon bg-indigo">
+    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+    </svg>
+  </a>
+  <span class="text-[11px] font-semibold text-stone-400 text-center">test-01</span>
+</div>
+
+<!-- 2 -->
+<div class="app-item flex flex-col items-center gap-2">
+  <a href="test-02.html" class="app-icon bg-indigo">
+    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+    </svg>
+  </a>
+  <span class="text-[11px] font-semibold text-stone-400 text-center">test-02</span>
+</div>
+
+<!-- 3 -->
+<div class="app-item flex flex-col items-center gap-2">
+  <a href="test-03.html" class="app-icon bg-indigo">
+    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+    </svg>
+  </a>
+  <span class="text-[11px] font-semibold text-stone-400 text-center">test-03</span>
+</div>
+
+<!-- 4 -->
+<div class="app-item flex flex-col items-center gap-2">
+  <a href="test-04.html" class="app-icon bg-indigo">
+    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+    </svg>
+  </a>
+  <span class="text-[11px] font-semibold text-stone-400 text-center">test-04</span>
+</div>
+
+<!-- 5 -->
+<div class="app-item flex flex-col items-center gap-2">
+  <a href="test-05.html" class="app-icon bg-indigo">
+    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+    </svg>
+  </a>
+  <span class="text-[11px] font-semibold text-stone-400 text-center">test-05</span>
+</div>
+
+<!-- 6 -->
+<div class="app-item flex flex-col items-center gap-2">
+  <a href="test-06.html" class="app-icon bg-indigo">
+    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+    </svg>
+  </a>
+  <span class="text-[11px] font-semibold text-stone-400 text-center">test-06</span>
+</div>
+
+<!-- 7 -->
+<div class="app-item flex flex-col items-center gap-2">
+  <a href="test-07.html" class="app-icon bg-indigo">
+    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+    </svg>
+  </a>
+  <span class="text-[11px] font-semibold text-stone-400 text-center">test-07</span>
+</div>
+
+<!-- 8 -->
+<div class="app-item flex flex-col items-center gap-2">
+  <a href="test-08.html" class="app-icon bg-indigo">
+    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+    </svg>
+  </a>
+  <span class="text-[11px] font-semibold text-stone-400 text-center">test-08</span>
+</div>
+
+<!-- 9 -->
+<div class="app-item flex flex-col items-center gap-2">
+  <a href="test-09.html" class="app-icon bg-indigo">
+    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+    </svg>
+  </a>
+  <span class="text-[11px] font-semibold text-stone-400 text-center">test-09</span>
+</div>
+
+<!-- 10 -->
+<div class="app-item flex flex-col items-center gap-2">
+  <a href="test-10.html" class="app-icon bg-indigo">
+    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+    </svg>
+  </a>
+  <span class="text-[11px] font-semibold text-stone-400 text-center">test-10</span>
+</div>
+
+
+          </div>
+        </main>
+    </div>
+
+    <script>
+      document.getElementById('appSearch').addEventListener('input', function(e) {
+        const term = e.target.value.toLowerCase();
+        document.querySelectorAll('.app-item').forEach(item => {
+          const title = item.querySelector('span').innerText.toLowerCase();
+          item.style.display = title.includes(term) ? 'flex' : 'none';
+        });
+      });
+    </script>
+  </body>
+</html>
