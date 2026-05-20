@@ -129,7 +129,7 @@
     /* ── Serving glow ── */
     @keyframes serveGlow {
       0%, 100% { box-shadow: 0 0 8px rgba(251,191,36,0.3); }
-      50%       { box-shadow: 0 0 22px rgba(251,191,36,0.65); }
+      50%        { box-shadow: 0 0 22px rgba(251,191,36,0.65); }
     }
     .serve-glow {
       animation: serveGlow 1.8s ease-in-out infinite;
@@ -199,7 +199,7 @@
 
       <!-- Toggles -->
       <div class="flex justify-between items-center gap-2">
-        <span class="text-[11px] font-bold text-white/45 tracking-widest uppercase">First to 10</span>
+        <span class="text-[11px] font-bold text-white/45 tracking-widest uppercase">First to 11</span>
         <label class="relative inline-flex items-center cursor-pointer">
           <input type="checkbox" id="shortGameToggle" class="sr-only peer" onchange="toggleSettings()">
           <div class="toggle-track w-9 h-5 bg-white/10 rounded-full peer peer-checked:bg-cyan-500
@@ -361,7 +361,7 @@
     }];
     let currentStep = 0;
 
-    let isFirstTo10 = false;
+    let isFirstTo11 = false;
     let isBo3      = true;
     let isHardCap  = true;
     let p1NameStr  = "Player 1";
@@ -379,13 +379,13 @@
         matchHistory = parsed.history || matchHistory;
         currentStep  = parsed.step    || 0;
         
-        isFirstTo10  = parsed.isFirstTo10 !== undefined ? parsed.isFirstTo10 : false;
+        isFirstTo11  = parsed.isFirstTo11 !== undefined ? parsed.isFirstTo11 : false;
         isBo3        = parsed.isBo3       !== undefined ? parsed.isBo3       : true;
         isHardCap    = parsed.isHardCap   !== undefined ? parsed.isHardCap   : true;
         p1NameStr    = parsed.p1NameStr || "Player 1";
         p2NameStr    = parsed.p2NameStr || "Player 2";
 
-        document.getElementById('shortGameToggle').checked = isFirstTo10;
+        document.getElementById('shortGameToggle').checked = isFirstTo11;
         document.getElementById('bo3Toggle').checked = isBo3;
         document.getElementById('capToggle').checked = isHardCap;
         document.getElementById('p1Name').value = p1NameStr;
@@ -397,7 +397,7 @@
     const saveData = () => {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
         history: matchHistory, step: currentStep,
-        isFirstTo10, isBo3, isHardCap, p1NameStr, p2NameStr
+        isFirstTo11, isBo3, isHardCap, p1NameStr, p2NameStr
       }));
     };
 
@@ -408,7 +408,7 @@
     };
 
     const toggleSettings = () => {
-      isFirstTo10 = document.getElementById('shortGameToggle').checked;
+      isFirstTo11 = document.getElementById('shortGameToggle').checked;
       isBo3       = document.getElementById('bo3Toggle').checked;
       isHardCap   = document.getElementById('capToggle').checked;
       updateUI();
@@ -475,9 +475,9 @@
       const state = matchHistory[currentStep];
 
       // Set targets based on game length mode
-      const WIN_TARGET   = isFirstTo10 ? 10 : 21;
-      const CAP_TARGET   = isFirstTo10 ? 15 : 30; // Scaled cap down for short format
-      const SWAP_TARGET  = isFirstTo10 ? 5 : 11;
+      const WIN_TARGET   = isFirstTo11 ? 11 : 21;
+      const CAP_TARGET   = isFirstTo11 ? 15 : 30; // Scaled cap down for short format
+      const SWAP_TARGET  = isFirstTo11 ? 6 : 11;
       const DEUCE_TARGET = WIN_TARGET - 1;
 
       document.getElementById('score1').textContent = state.p1;
