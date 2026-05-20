@@ -65,61 +65,72 @@
 
           <div class="grid grid-cols-3 gap-x-6 gap-y-8 pb-20 mt-2">
             
-<!-- 1 -->
-<div class="app-item flex flex-col items-center gap-2">
-  <a href="ping-pong.html" class="app-icon bg-indigo">
-    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-    </svg>
-  </a>
-  <span class="text-[11px] font-semibold text-stone-400 text-center">Ping-Pong</span>
-</div>
+            <!-- 1. Ping-Pong -->
+            <div class="app-item flex flex-col items-center gap-2">
+              <a href="ping-pong.html" class="app-icon bg-red">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <!-- Paddle -->
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.5 15.5L19 19M11 13a5 5 0 117.07-7.07 5 5 0 01-7.07 7.07z" />
+                  <!-- Ball -->
+                  <circle cx="6" cy="15" r="2" stroke-width="2" />
+                </svg>
+              </a>
+              <span class="text-[11px] font-semibold text-stone-400 text-center">Ping-Pong</span>
+            </div>
 
-<!-- 2 -->
-<div class="app-item flex flex-col items-center gap-2">
-  <a href="badminton.html" class="app-icon bg-indigo">
-    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-    </svg>
-  </a>
-  <span class="text-[11px] font-semibold text-stone-400 text-center">Badminton</span>
-</div>
+            <!-- 2. Badminton -->
+            <div class="app-item flex flex-col items-center gap-2">
+              <a href="badminton.html" class="app-icon bg-teal">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <!-- Shuttlecock base -->
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18a2 2 0 100 4 2 2 0 000-4z" />
+                  <!-- Feathers -->
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 18L5 5l4 3 3-5 3 5 4-3-5 13" />
+                </svg>
+              </a>
+              <span class="text-[11px] font-semibold text-stone-400 text-center">Badminton</span>
+            </div>
 
+            <!-- 3. Squash -->
+            <div class="app-item flex flex-col items-center gap-2">
+              <a href="squash.html" class="app-icon bg-orange">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <!-- Teardrop Racket Frame -->
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2c-3.5 0-5 3.5-5 7 0 2.5 2.5 5 5 5s5-2.5 5-5c0-3.5-1.5-7-5-7z" />
+                  <!-- Shaft -->
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v8" />
+                  <!-- Dot/Ball -->
+                  <circle cx="18" cy="18" r="1.5" stroke="none" fill="currentColor" />
+                </svg>
+              </a>
+              <span class="text-[11px] font-semibold text-stone-400 text-center">Squash</span>
+            </div>
 
-<!-- 4 -->
-<div class="app-item flex flex-col items-center gap-2">
-  <a href="squash.html" class="app-icon bg-indigo">
-    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-    </svg>
-  </a>
-  <span class="text-[11px] font-semibold text-stone-400 text-center">Squash</span>
-</div>
+            <!-- 4. Tennis -->
+            <div class="app-item flex flex-col items-center gap-2">
+              <a href="tennis.html" class="app-icon bg-green">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <!-- Tennis Ball -->
+                  <circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                  <!-- Seams -->
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 3.5A7 7 0 017 20.5M17 3.5A7 7 0 0017 20.5" />
+                </svg>
+              </a>
+              <span class="text-[11px] font-semibold text-stone-400 text-center">Tennis</span>
+            </div>
 
-<!-- 5 -->
-<div class="app-item flex flex-col items-center gap-2">
-  <a href="tennis.html" class="app-icon bg-indigo">
-    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-    </svg>
-  </a>
-  <span class="text-[11px] font-semibold text-stone-400 text-center">Tennis</span>
-</div
-
-<!-- 3 -->
-<div class="app-item flex flex-col items-center gap-2">
-  <a href="interactive-bracket.html" class="app-icon bg-indigo">
-    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-    </svg>
-  </a>
-  <span class="text-[11px] font-semibold text-stone-400 text-center">Interactive Bracket</span>
-</div>
+            <!-- 5. Interactive Bracket -->
+            <div class="app-item flex flex-col items-center gap-2">
+              <a href="interactive-bracket.html" class="app-icon bg-blue">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <!-- Tournament Bracket Lines -->
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h4v5H4M4 14h4v5H4" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7.5h4v9H8" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12h8" />
+                </svg>
+              </a>
+              <span class="text-[11px] font-semibold text-stone-400 text-center">Interactive Bracket</span>
+            </div>
 
           </div>
         </main>
