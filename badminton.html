@@ -176,9 +176,12 @@
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    /* ── Utility toggles ── */
-    .toggle-track {
-      transition: background 0.2s;
+    /* ── Details Reset ── */
+    details > summary {
+      list-style: none;
+    }
+    details > summary::-webkit-details-marker {
+      display: none;
     }
   </style>
 </head>
@@ -194,38 +197,64 @@
 
   <div class="flex-1 flex flex-col items-center justify-center p-3 sm:p-4 w-full">
 
-    <!-- Controls Bar -->
-    <div class="controls-card p-3 sm:p-4 rounded-xl w-full max-w-md mb-3 flex flex-wrap justify-center items-center gap-4 sm:gap-6">
+    <!-- Controls Accordion -->
+    <details class="w-full max-w-md mb-3 group">
+      <summary class="controls-card p-3 sm:p-4 rounded-xl cursor-pointer flex justify-between items-center text-white/60 hover:text-white transition-colors">
+        <span class="font-bold tracking-widest uppercase text-sm flex items-center gap-2">
+          ⚙️ Match Settings
+        </span>
+        <span class="transition-transform duration-300 group-open:-rotate-180 opacity-50 text-xs">▼</span>
+      </summary>
+      
+      <div class="controls-card mt-2 p-4 rounded-xl flex flex-col gap-4">
+        
+        <!-- Game Length Segmented Control -->
+        <div class="flex flex-col gap-1.5">
+          <span class="text-[11px] font-bold text-white/45 tracking-widest uppercase text-center">Points Per Game</span>
+          <div class="flex bg-white/5 p-1 rounded-lg">
+            <label class="flex-1 text-center cursor-pointer">
+              <input type="radio" name="gameLength" id="gl11" onchange="toggleSettings()" class="sr-only peer">
+              <div class="py-1.5 rounded-md text-xs sm:text-sm font-bold tracking-widest uppercase text-white/40 peer-checked:text-white peer-checked:bg-cyan-600/90 peer-checked:shadow-md transition-all">First to 11</div>
+            </label>
+            <label class="flex-1 text-center cursor-pointer">
+              <input type="radio" name="gameLength" id="gl21" onchange="toggleSettings()" class="sr-only peer" checked>
+              <div class="py-1.5 rounded-md text-xs sm:text-sm font-bold tracking-widest uppercase text-white/40 peer-checked:text-white peer-checked:bg-cyan-600/90 peer-checked:shadow-md transition-all">First to 21</div>
+            </label>
+          </div>
+        </div>
 
-      <!-- Toggles -->
-      <div class="flex justify-between items-center gap-2">
-        <span class="text-[11px] font-bold text-white/45 tracking-widest uppercase">First to 11</span>
-        <label class="relative inline-flex items-center cursor-pointer">
-          <input type="checkbox" id="shortGameToggle" class="sr-only peer" onchange="toggleSettings()">
-          <div class="toggle-track w-9 h-5 bg-white/10 rounded-full peer peer-checked:bg-cyan-500
-            peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px]
-            after:left-[2px] after:bg-white after:border after:rounded-full after:h-4 after:w-4 after:transition-all"></div>
-        </label>
+        <!-- Format Segmented Control -->
+        <div class="flex flex-col gap-1.5">
+          <span class="text-[11px] font-bold text-white/45 tracking-widest uppercase text-center">Match Format</span>
+          <div class="flex bg-white/5 p-1 rounded-lg">
+            <label class="flex-1 text-center cursor-pointer">
+              <input type="radio" name="matchFormat" id="mf1" onchange="toggleSettings()" class="sr-only peer">
+              <div class="py-1.5 rounded-md text-xs sm:text-sm font-bold tracking-widest uppercase text-white/40 peer-checked:text-white peer-checked:bg-cyan-600/90 peer-checked:shadow-md transition-all">Single Game</div>
+            </label>
+            <label class="flex-1 text-center cursor-pointer">
+              <input type="radio" name="matchFormat" id="mf3" onchange="toggleSettings()" class="sr-only peer" checked>
+              <div class="py-1.5 rounded-md text-xs sm:text-sm font-bold tracking-widest uppercase text-white/40 peer-checked:text-white peer-checked:bg-cyan-600/90 peer-checked:shadow-md transition-all">Best of 3</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Deuce Cap Segmented Control -->
+        <div class="flex flex-col gap-1.5">
+          <span class="text-[11px] font-bold text-white/45 tracking-widest uppercase text-center">Deuce Rules</span>
+          <div class="flex bg-white/5 p-1 rounded-lg">
+            <label class="flex-1 text-center cursor-pointer">
+              <input type="radio" name="deuceCap" id="dcNoCap" onchange="toggleSettings()" class="sr-only peer">
+              <div class="py-1.5 rounded-md text-xs sm:text-sm font-bold tracking-widest uppercase text-white/40 peer-checked:text-white peer-checked:bg-cyan-600/90 peer-checked:shadow-md transition-all">Win by 2</div>
+            </label>
+            <label class="flex-1 text-center cursor-pointer">
+              <input type="radio" name="deuceCap" id="dcCap" onchange="toggleSettings()" class="sr-only peer" checked>
+              <div class="py-1.5 rounded-md text-xs sm:text-sm font-bold tracking-widest uppercase text-white/40 peer-checked:text-white peer-checked:bg-cyan-600/90 peer-checked:shadow-md transition-all">Hard Cap</div>
+            </label>
+          </div>
+        </div>
+
       </div>
-      <div class="flex justify-between items-center gap-2">
-        <span class="text-[11px] font-bold text-white/45 tracking-widest uppercase">Best of 3</span>
-        <label class="relative inline-flex items-center cursor-pointer">
-          <input type="checkbox" id="bo3Toggle" class="sr-only peer" onchange="toggleSettings()" checked>
-          <div class="toggle-track w-9 h-5 bg-white/10 rounded-full peer peer-checked:bg-cyan-500
-            peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px]
-            after:left-[2px] after:bg-white after:border after:rounded-full after:h-4 after:w-4 after:transition-all"></div>
-        </label>
-      </div>
-      <div class="flex justify-between items-center gap-2">
-        <span class="text-[11px] font-bold text-white/45 tracking-widest uppercase">DEUCE</span>
-        <label class="relative inline-flex items-center cursor-pointer">
-          <input type="checkbox" id="capToggle" class="sr-only peer" onchange="toggleSettings()" checked>
-          <div class="toggle-track w-9 h-5 bg-white/10 rounded-full peer peer-checked:bg-cyan-500
-            peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px]
-            after:left-[2px] after:bg-white after:border after:rounded-full after:h-4 after:w-4 after:transition-all"></div>
-        </label>
-      </div>
-    </div>
+    </details>
 
     <!-- Main Card -->
     <div class="court-card p-4 sm:p-6 rounded-2xl max-w-md w-full text-center relative overflow-hidden" id="mainCard">
@@ -370,7 +399,7 @@
     let isCurrentGameOver = false;
     let isMatchOver       = false;
 
-    const STORAGE_KEY = 'badmintonTrackerStateV8';
+    const STORAGE_KEY = 'badmintonTrackerStateV9';
 
     window.onload = () => {
       const savedData = localStorage.getItem(STORAGE_KEY);
@@ -384,13 +413,16 @@
         isHardCap    = parsed.isHardCap   !== undefined ? parsed.isHardCap   : true;
         p1NameStr    = parsed.p1NameStr || "Player 1";
         p2NameStr    = parsed.p2NameStr || "Player 2";
-
-        document.getElementById('shortGameToggle').checked = isFirstTo11;
-        document.getElementById('bo3Toggle').checked = isBo3;
-        document.getElementById('capToggle').checked = isHardCap;
-        document.getElementById('p1Name').value = p1NameStr;
-        document.getElementById('p2Name').value = p2NameStr;
       }
+
+      // Sync UI radios with loaded state
+      document.getElementById(isFirstTo11 ? 'gl11' : 'gl21').checked = true;
+      document.getElementById(isBo3 ? 'mf3' : 'mf1').checked = true;
+      document.getElementById(isHardCap ? 'dcCap' : 'dcNoCap').checked = true;
+      
+      document.getElementById('p1Name').value = p1NameStr;
+      document.getElementById('p2Name').value = p2NameStr;
+
       updateUI();
     };
 
@@ -408,9 +440,9 @@
     };
 
     const toggleSettings = () => {
-      isFirstTo11 = document.getElementById('shortGameToggle').checked;
-      isBo3       = document.getElementById('bo3Toggle').checked;
-      isHardCap   = document.getElementById('capToggle').checked;
+      isFirstTo11 = document.getElementById('gl11').checked;
+      isBo3       = document.getElementById('mf3').checked;
+      isHardCap   = document.getElementById('dcCap').checked;
       updateUI();
     };
 
